@@ -1,12 +1,16 @@
+"""
+githubのパブリックリポジトリに対して最新バージョンを取得、現在のものと比較する。
+リポジトリの設定がプライベートの場合は認証情報が必要になる。
+"""
+
 import requests
 import sys
 
-# アプリケーションの現在のバージョンを定義します。
-# これは、プログラムが配布される際に埋め込まれるバージョン情報です。
-# 例: "1.0.0", "1.0.1-beta" など
-# 実際のアプリケーションでは、この値を設定ファイルや別の場所から読み込むようにしてください。
-CURRENT_APP_VERSION = "0.0.0" # 仮のバージョン。配布時に適切なバージョンに更新してください。
-
+"""
+現在のリリースバージョンの定義、
+githubのリリースを作成するときにおけるtagの部分。
+"""
+CURRENT_APP_VERSION = "v0.0.0"#現在のバージョンの値、ここが最新と異なるかどうかをチェックする。
 def get_latest_github_release_version(owner, repo):
     """
     指定されたGitHubリポジトリの最新リリースバージョンを取得します。
@@ -56,7 +60,7 @@ if __name__ == "__main__":
     # このスクリプトを直接実行した場合のテスト用
     # 例: github_owner='your-github-username', github_repo='your-repo-name'
     test_owner = "tesu-dice"  # ここをあなたのGitHubユーザー名に置き換える
-    test_repo = "releace-check"      # ここをあなたのリポジトリ名に置き換える
+    test_repo = "releace_check"      # ここをあなたのリポジトリ名に置き換える
 
     # requestsライブラリがインストールされているか確認
     try:
