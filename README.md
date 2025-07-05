@@ -1,0 +1,2 @@
+# releace_check
+githubでのリリース機能とそれを使った更新検知のテスト
